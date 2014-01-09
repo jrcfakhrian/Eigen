@@ -105,3 +105,18 @@ D:\Universitas\Sistem Multimedia\Tugas Besar\FaceRecognition\FaceRecProOV\obj\x8
 D:\Universitas\Sistem Multimedia\Tugas Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Login.resources
 D:\Universitas\Sistem Multimedia\Tugas Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Input_NIP.resources
 D:\Universitas\Sistem Multimedia\Tugas Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.DaftarPeg.resources
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.exe
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.DaftarPeg.resources
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Input_NIP.resources
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Login.resources
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.FrmPrincipal.resources
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\bin\Debug\MultiFaceRec.exe
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\bin\Debug\MultiFaceRec.pdb
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\bin\Debug\Emgu.CV.xml
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\bin\Debug\Emgu.CV.UI.xml
+D:\Universitas\Sistem_Multimedia\Tugas_Besar\FaceRecognition\FaceRecProOV\bin\Debug\Emgu.Util.xml

@@ -72,5 +72,25 @@ namespace MultiFaceRec
             db.Close();
             return false;
         }
+
+        public Boolean statuscariuser4(string nama)
+        {
+            DBConnect koneksi_db = new DBConnect();
+            MySqlConnection db = new MySqlConnection(koneksi_db.koneksi());
+            db.Open();
+            MySqlCommand dbcmd = db.CreateCommand();
+            string sql = "select nim,nama from data_peg where nama='" + nama + "'";
+            dbcmd.CommandText = sql;
+            MySqlDataReader reader = dbcmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if ((reader.GetString(0).ToString() == nama))
+                {
+                    return true;
+                }
+            }
+            db.Close();
+            return false;
+        }
     }
 }

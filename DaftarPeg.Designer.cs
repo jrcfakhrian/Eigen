@@ -55,11 +55,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Group_Cat = new System.Windows.Forms.GroupBox();
+            this.Cat_5 = new System.Windows.Forms.Label();
             this.Cat_1 = new System.Windows.Forms.Label();
+            this.Cat_4 = new System.Windows.Forms.Label();
             this.Cat_2 = new System.Windows.Forms.Label();
             this.Cat_3 = new System.Windows.Forms.Label();
-            this.Cat_4 = new System.Windows.Forms.Label();
-            this.Cat_5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
@@ -344,7 +344,17 @@
             this.Group_Cat.Size = new System.Drawing.Size(352, 62);
             this.Group_Cat.TabIndex = 13;
             this.Group_Cat.TabStop = false;
-            this.Group_Cat.Text = "Catatan";
+            this.Group_Cat.Text = "Petunjuk Penggunaan :";
+            // 
+            // Cat_5
+            // 
+            this.Cat_5.AutoSize = true;
+            this.Cat_5.Location = new System.Drawing.Point(6, 26);
+            this.Cat_5.Name = "Cat_5";
+            this.Cat_5.Size = new System.Drawing.Size(167, 13);
+            this.Cat_5.TabIndex = 18;
+            this.Cat_5.Text = "5. Arahkan wajah agak ke bawah";
+            this.Cat_5.Visible = false;
             // 
             // Cat_1
             // 
@@ -354,6 +364,16 @@
             this.Cat_1.Size = new System.Drawing.Size(222, 13);
             this.Cat_1.TabIndex = 14;
             this.Cat_1.Text = "1. Arahkan wajah lurus menghadap ke depan";
+            // 
+            // Cat_4
+            // 
+            this.Cat_4.AutoSize = true;
+            this.Cat_4.Location = new System.Drawing.Point(10, 26);
+            this.Cat_4.Name = "Cat_4";
+            this.Cat_4.Size = new System.Drawing.Size(155, 13);
+            this.Cat_4.TabIndex = 17;
+            this.Cat_4.Text = "4. Arahkan wajah agak ke atas";
+            this.Cat_4.Visible = false;
             // 
             // Cat_2
             // 
@@ -374,26 +394,6 @@
             this.Cat_3.TabIndex = 16;
             this.Cat_3.Text = "3. Arahkan wajah agak miring ke kanan";
             this.Cat_3.Visible = false;
-            // 
-            // Cat_4
-            // 
-            this.Cat_4.AutoSize = true;
-            this.Cat_4.Location = new System.Drawing.Point(10, 26);
-            this.Cat_4.Name = "Cat_4";
-            this.Cat_4.Size = new System.Drawing.Size(155, 13);
-            this.Cat_4.TabIndex = 17;
-            this.Cat_4.Text = "4. Arahkan wajah agak ke atas";
-            this.Cat_4.Visible = false;
-            // 
-            // Cat_5
-            // 
-            this.Cat_5.AutoSize = true;
-            this.Cat_5.Location = new System.Drawing.Point(6, 26);
-            this.Cat_5.Name = "Cat_5";
-            this.Cat_5.Size = new System.Drawing.Size(167, 13);
-            this.Cat_5.TabIndex = 18;
-            this.Cat_5.Text = "5. Arahkan wajah agak ke bawah";
-            this.Cat_5.Visible = false;
             // 
             // DaftarPeg
             // 

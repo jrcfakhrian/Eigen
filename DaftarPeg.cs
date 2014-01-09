@@ -41,6 +41,7 @@ namespace MultiFaceRec
         Image<Gray, byte> result, TrainedFace = null;
         Image<Gray, byte> gray = null;
         List<Image<Gray, byte>> trainingImages = new List<Image<Gray, byte>>();
+        List<Image<Gray, byte>> trainingImages2 = new List<Image<Gray, byte>>();
         List<string> labels = new List<string>();
         List<string> NamePersons = new List<string>();
         int ContTrain, NumLabels, t;
@@ -54,28 +55,28 @@ namespace MultiFaceRec
             face = new HaarCascade("haarcascade_frontalface_default.xml");
             eye = new HaarCascade("haarcascade_eye.xml");
 
-            //try
-            //{
-            //Load of previus trainned faces and labels for each image
-            //string Labelsinfo = File.ReadAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels" + NIP_Enroll + ".txt");
-            //string[] Labels = Labelsinfo.Split('%');
-            //NumLabels = Convert.ToInt16(Labels[0]);
-            //ContTrain = NumLabels;
-            //string LoadFaces;
+            try
+            {
+                //Load of previus trainned faces and labels for each image
+                string Labelsinfo = File.ReadAllText(Application.StartupPath + "/TrainedFaces2/TrainedLabelsAll.txt");
+                string[] Labels = Labelsinfo.Split('%');
+                NumLabels = Convert.ToInt16(Labels[0]);
+                ContTrain = NumLabels;
+                string LoadFaces;
 
-            //for (int tf = 1; tf < NumLabels + 1; tf++)
-            //{
-            //LoadFaces = "face_" + NIP_Enroll + "" + tf + ".bmp";
-            //trainingImages.Add(new Image<Gray, byte>(Application.StartupPath + "/TrainedFaces/" + LoadFaces));
-            //labels.Add(Labels[tf]);
-            //}
+                for (int tf = 1; tf < NumLabels + 1; tf++)
+                {
+                    LoadFaces = "face_1" + tf + ".bmp";
+                    trainingImages.Add(new Image<Gray, byte>(Application.StartupPath + "/TrainedFaces2/" + LoadFaces));
+                    labels.Add(Labels[tf]);
+                }
 
-            //}
-            //catch (Exception e)
-            //{
-            // MessageBox.Show(e.ToString());
-            // MessageBox.Show("Persiapan untuk memasukkan Data Wajah  " + NIP_Enroll + ".", "Load Face Training", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Persiapan untuk memasukkan Data Wajah  " + NIP_Enroll + ".", "Load Face Training", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         void FrameGrabber(object sender, EventArgs e)
@@ -253,19 +254,27 @@ namespace MultiFaceRec
                 //test image with cubic interpolation type method
                 TrainedFace = result.Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
                 trainingImages.Add(TrainedFace);
+                trainingImages2.Add(TrainedFace);
                 labels.Add(Nama_Enroll);
 
                 //Show face added in gray scale
                 imageBox1.Image = TrainedFace;
 
                 //Write the number of triained faces in a file text for further load
-                File.WriteAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels" + NIP_Enroll + ".txt", trainingImages.ToArray().Length.ToString() + "%");
+                File.WriteAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels" + NIP_Enroll + ".txt", trainingImages2.ToArray().Length.ToString() + "%");
+                File.WriteAllText(Application.StartupPath + "/TrainedFaces2/TrainedLabelsAll.txt", trainingImages.ToArray().Length.ToString() + "%");
 
                 //Write the labels of triained faces in a file text for further load
+                for (int i = 1; i < trainingImages2.ToArray().Length + 1; i++)
+                {
+                    trainingImages2.ToArray()[i - 1].Save(Application.StartupPath + "/TrainedFaces/face_" + NIP_Enroll + "" + i + ".bmp");
+                    File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels" + NIP_Enroll + ".txt", labels.ToArray()[i - 1] + "%");
+                }
+
                 for (int i = 1; i < trainingImages.ToArray().Length + 1; i++)
                 {
-                    trainingImages.ToArray()[i - 1].Save(Application.StartupPath + "/TrainedFaces/face_" + NIP_Enroll + "" + i + ".bmp");
-                    File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels" + NIP_Enroll + ".txt", labels.ToArray()[i - 1] + "%");
+                    trainingImages.ToArray()[i - 1].Save(Application.StartupPath + "/TrainedFaces2/face_1" + i + ".bmp");
+                    File.AppendAllText(Application.StartupPath + "/TrainedFaces2/TrainedLabelsAll.txt", labels.ToArray()[i - 1] + "%");
                     Label_Training.Text = Convert.ToString(training_ke - 1);
 
                     if (Label_Training.Text == "4")
@@ -308,7 +317,7 @@ namespace MultiFaceRec
                     }
                 }
 
-                MessageBox.Show(Nama_Enroll + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Nama_Enroll + "´s face detected and added", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             catch

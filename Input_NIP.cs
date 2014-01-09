@@ -69,7 +69,7 @@ namespace MultiFaceRec
                             jabat = reader.GetString(1).ToString();
                             if (jabat == "Admin")
                             {
-                                button_Daftar.Visible = true;
+                                button_Daftar.Enabled = true;
                             }
                         }
                     }
@@ -81,6 +81,7 @@ namespace MultiFaceRec
         private void Input_NIP_Load(object sender, EventArgs e)
         {
             //button_Daftar.Visible = false;
+            button_Daftar.Enabled = false;
             DBConnect koneksi_db = new DBConnect();
             MySqlConnection conn = new MySqlConnection(koneksi_db.koneksi());
             try
@@ -100,35 +101,39 @@ namespace MultiFaceRec
 
         private void button_logout_Click(object sender, EventArgs e)
         {
-            button_Daftar.Visible = false;
+            //button_Daftar.Visible = false;
+            button_Daftar.Enabled = false;
             tampillogin();
         }
 
         private void button_Masuk_Click(object sender, EventArgs e)
         {
-            CariPengguna cp = new CariPengguna();
-            if (cp.statuscariuser3(NIP_Textbox.Text) == true)
-            {
-                if (cp.statuscariuser(NIP_Textbox.Text) == false)
-                {
-                    FrmPrincipal frmmain = new FrmPrincipal(NIP_Textbox.Text);
-                    DialogResult dr = frmmain.ShowDialog();
-                    NIP_Textbox.Clear();
-                    NIP_Textbox.Focus();
-                }
-                else
-                {
-                    MessageBox.Show("Anda Sudah Melakukan Absensi untuk hari ini");
-                    NIP_Textbox.Clear();
-                    NIP_Textbox.Focus();
-                }
-            }
-            else
-            {
-                MessageBox.Show("N.I.P yang anda masukkan tidak terdaftar di database");
-                NIP_Textbox.Clear();
-                NIP_Textbox.Focus();
-            }
+            //CariPengguna cp = new CariPengguna();
+            //if (cp.statuscariuser3(NIP_Textbox.Text) == true)
+            //{
+                //if (cp.statuscariuser(NIP_Textbox.Text) == false)
+                //{
+                    //FrmPrincipal frmmain = new FrmPrincipal(NIP_Textbox.Text);
+                    //DialogResult dr = frmmain.ShowDialog();
+                    //this.Close();
+                    //this.Hide();
+                    //frmmain.Show();
+                    //NIP_Textbox.Clear();
+                    //NIP_Textbox.Focus();
+               // }
+                //else
+                //{
+                   // MessageBox.Show("Anda Sudah Melakukan Absensi untuk hari ini");
+                    //NIP_Textbox.Clear();
+                    //NIP_Textbox.Focus();
+                //}
+            //}
+            //else
+            //{
+            //    MessageBox.Show("N.I.P yang anda masukkan tidak terdaftar di database");
+            //    NIP_Textbox.Clear();
+            //    NIP_Textbox.Focus();
+            //}
         }
 
         private void button_Daftar_Click(object sender, EventArgs e)
@@ -161,6 +166,18 @@ namespace MultiFaceRec
                 }
                 catch (Exception) { }
             }
+        }
+
+        private void Button_Absensi_Click(object sender, EventArgs e)
+        {
+            string NIP_Awal = "1";
+            string path = "All";
+            string folder = "TrainedFaces2";
+
+            FrmPrincipal frmmain = new FrmPrincipal(NIP_Awal,path,folder);
+            DialogResult dr = frmmain.ShowDialog();
+            //this.Close();
+            //this.Hide();
         }
     }
 }
